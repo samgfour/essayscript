@@ -7,36 +7,217 @@
   <title>EssayHelp | Plan Your Next Assignment</title>
   <style>
     :root{--ink:#172033;--muted:#667085;--brand:#6957d9;--brand-dark:#5142b4;--surface:#fff;--background:#f4f6fb;--border:#d9deea;--success:#127c57;--shadow:0 18px 50px rgba(28,35,66,.12)}
-    *{box-sizing:border-box}body{margin:0;min-height:100vh;color:var(--ink);background:radial-gradient(circle at top right,#e8e3ff 0,transparent 35%),var(--background);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.5}.shell{width:min(100% - 2rem,980px);margin:auto;padding:2rem 0 3rem}header{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:2.5rem}.logo{display:flex;align-items:center;gap:.7rem;font-weight:800;letter-spacing:-.03em;font-size:1.25rem}.logo-mark{display:grid;place-items:center;width:2.4rem;height:2.4rem;color:#fff;background:var(--brand);border-radius:.8rem;box-shadow:0 8px 18px rgba(105,87,217,.3)}.tagline,.hero p,.hint,footer{color:var(--muted)}.tagline{font-size:.92rem}.hero{max-width:680px;margin-bottom:1.75rem}h1{margin:0 0 .65rem;font-size:clamp(2rem,5vw,3.5rem);line-height:1.08;letter-spacing:-.055em}.hero p{margin:0;font-size:1.08rem}.calculator{display:grid;grid-template-columns:1.1fr .9fr;overflow:hidden;background:var(--surface);border:1px solid rgba(217,222,234,.8);border-radius:1.25rem;box-shadow:var(--shadow)}.form-panel,.result-panel{padding:clamp(1.4rem,4vw,2.5rem)}.form-panel{background:rgba(255,255,255,.9)}.result-panel{display:flex;flex-direction:column;justify-content:space-between;color:#fff;background:linear-gradient(145deg,#6957d9,#40318d)}h2{margin:0 0 1.5rem;font-size:1.25rem}.field{margin-bottom:1.35rem}label{display:block;margin-bottom:.5rem;font-weight:700;font-size:.94rem}select,input{width:100%;padding:.85rem 1rem;color:var(--ink);background:#fff;border:1px solid var(--border);border-radius:.65rem;font:inherit}select:focus,input:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 4px rgba(105,87,217,.15)}.hint{margin:.45rem 0 0;font-size:.82rem}.actions{display:flex;gap:.75rem;margin-top:1.75rem;flex-wrap:wrap}button{cursor:pointer;border:0;border-radius:.65rem;padding:.85rem 1.15rem;font:inherit;font-weight:750;transition:transform .15s,background .15s}button:hover{transform:translateY(-1px)}.primary{color:#fff;background:var(--brand);flex:1}.primary:hover{background:var(--brand-dark)}.secondary{color:var(--ink);background:#edf0f7}.whatsapp{color:#fff;background:#1fbd63}.whatsapp:hover{background:#169b50}.email{color:#fff;background:#2b6fed}.email:hover{background:#1c55c6}.print{color:#fff;background:#6c5ce7}.print:hover{background:#5745d6}.result-label{margin:0;opacity:.82;font-size:.92rem}.total{margin:.3rem 0 1.5rem;font-size:clamp(2.8rem,7vw,4.4rem);line-height:1;letter-spacing:-.06em}.summary{padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.2)}.summary p{display:flex;justify-content:space-between;gap:1rem;margin:.55rem 0;opacity:.9}.summary strong{color:#fff}.success{min-height:1.5rem;margin:1rem 0 0;color:var(--success);font-size:.9rem;font-weight:650}footer{margin-top:1.5rem;text-align:center;font-size:.85rem}@media(max-width:700px){.shell{padding-top:1.25rem}header{margin-bottom:2rem}.tagline{display:none}.calculator{grid-template-columns:1fr}.result-panel{min-height:260px}}
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;color:var(--ink);background:radial-gradient(circle at top right,#e8e3ff 0,transparent 35%),var(--background);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.5}.shell{width:min(100% - 2rem,980px);margin:auto;padding:2rem 0 3rem}header{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:2.5rem}.logo{display:flex;align-items:center;gap:.7rem;font-weight:800;letter-spacing:-.03em;font-size:1.25rem}.logo-mark{display:grid;place-items:center;width:2.4rem;height:2.4rem;color:#fff;background:var(--brand);border-radius:.8rem;box-shadow:0 8px 18px rgba(105,87,217,.3)}.tagline,.hero p,.hint,footer{color:var(--muted)}.tagline{font-size:.92rem}.hero{max-width:680px;margin-bottom:1.75rem}h1{margin:0 0 .65rem;font-size:clamp(2rem,5vw,3.5rem);line-height:1.08;letter-spacing:-.055em}.hero p{margin:0;font-size:1.08rem}.calculator{display:grid;grid-template-columns:1.1fr .9fr;overflow:hidden;background:var(--surface);border:1px solid rgba(217,222,234,.8);border-radius:1.25rem;box-shadow:var(--shadow)}.form-panel,.result-panel{padding:clamp(1.4rem,4vw,2.5rem)}.form-panel{background:rgba(255,255,255,.9)}.result-panel{display:flex;flex-direction:column;justify-content:space-between;color:#fff;background:linear-gradient(145deg,#6957d9,#40318d)}h2{margin:0 0 1.5rem;font-size:1.25rem}.field{margin-bottom:1.35rem}label{display:block;margin-bottom:.5rem;font-weight:700;font-size:.94rem}select,input,textarea{width:100%;padding:.85rem 1rem;color:var(--ink);background:#fff;border:1px solid var(--border);border-radius:.65rem;font:inherit}select:focus,input:focus,textarea:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 4px rgba(105,87,217,.15)}.hint{margin:.45rem 0 0;font-size:.82rem}.actions{display:flex;gap:.75rem;margin-top:1.75rem;flex-wrap:wrap}button{cursor:pointer;border:0;border-radius:.65rem;padding:.85rem 1.15rem;font:inherit;font-weight:750;transition:transform .15s,background .15s}button:hover{transform:translateY(-1px)}.primary{color:#fff;background:var(--brand);flex:1}.primary:hover{background:var(--brand-dark)}.secondary{color:var(--ink);background:#edf0f7}.whatsapp{color:#fff;background:#1fbd63}.whatsapp:hover{background:#169b50}.email{color:#fff;background:#2b6fed}.email:hover{background:#1c55c6}.print{color:#fff;background:#6c5ce7}.print:hover{background:#5745d6}.result-label{margin:0;opacity:.82;font-size:.92rem}.total{margin:.3rem 0 1.5rem;font-size:clamp(2.8rem,7vw,4.4rem);line-height:1;letter-spacing:-.06em}.summary{padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.2)}.summary p{display:flex;justify-content:space-between;gap:1rem;margin:.55rem 0;opacity:.9}.summary strong{color:#fff}.success{min-height:1.5rem;margin:1rem 0 0;color:var(--success);font-size:.9rem;font-weight:650}footer{margin-top:1.5rem;text-align:center;font-size:.85rem}@media(max-width:700px){.shell{padding-top:1.25rem}header{margin-bottom:2rem}.tagline{display:none}.calculator{grid-template-columns:1fr}.result-panel{min-height:260px}}
   </style>
 </head>
 <body>
   <main class="shell">
     <header><div class="logo"><span class="logo-mark" aria-hidden="true">✦</span> EssayHelp</div><div class="tagline">Friendly estimates, made simple</div></header>
-    <section class="hero" aria-labelledby="page-title"><h1 id="page-title">Let's plan your next assignment.</h1><p>Hi Sam here! Enter your assignment details below and we’ll calculate the estimate for you.</p></section>
+    <section class="hero" aria-labelledby="page-title"><h1 id="page-title">Let's plan your next assignment.</h1><p>Hi Sam! Enter your assignment details below and we’ll calculate the estimate for you.</p></section>
     <section class="calculator" aria-label="Assignment price calculator">
       <form class="form-panel" id="calculator-form">
         <h2>Build your estimate</h2>
-        <div class="field"><label for="assignment-type">Assignment type</label><select id="assignment-type" name="assignment-type"><option value="Essay" data-price="12">Essay — $12/page</option><option value="Report" data-price="14">Report — $14/page</option><option value="Thesis" data-price="19">Thesis — $19/page</option></select></div>
-        <div class="field"><label for="pages">Number of pages</label><input id="pages" name="pages" type="number" min="1" max="1000" step="1" value="1" inputmode="numeric" required aria-describedby="pages-hint"><p class="hint" id="pages-hint">Enter a whole number from 1 to 1,000.</p></div>
-        <div class="actions"><button class="primary" type="submit">Calculate estimate</button><button class="secondary" type="reset">Reset</button><button class="whatsapp" id="whatsapp-button" type="button">Send details on WhatsApp</button><button class="email" id="email-button" type="button">Send details by email</button><button class="print" id="print-button" type="button">Print order summary</button></div>
+
+        <div class="field">
+          <label for="assignment-type">Assignment type</label>
+          <select id="assignment-type" name="assignment-type">
+            <option value="Essay" data-price="19">Essay — $19/page</option>
+            <option value="Report" data-price="19">Report — $19/page</option>
+            <option value="Thesis" data-price="19">Thesis — $19/page</option>
+            <option value="Research Paper" data-price="19">Research Paper — $19/page</option>
+            <option value="Dissertation" data-price="19">Dissertation — $19/page</option>
+            <option value="Case Study" data-price="19">Case Study — $19/page</option>
+            <option value="Presentation" data-price="19">Presentation — $19/page</option>
+            <option value="Other / Custom" data-custom="true">Other / Custom — custom quote</option>
+          </select>
+        </div>
+
+        <div class="field" id="custom-field" hidden>
+          <label for="custom-details">Describe the custom assignment</label>
+          <textarea id="custom-details" name="custom-details" rows="4" placeholder="Example: 10-page literature review with citations and slides..."></textarea>
+        </div>
+
+        <div class="field">
+          <label for="pages">Number of pages</label>
+          <input id="pages" name="pages" type="number" min="1" max="1000" step="1" value="1" inputmode="numeric" required aria-describedby="pages-hint">
+          <p class="hint" id="pages-hint">Enter a whole number from 1 to 1,000.</p>
+        </div>
+
+        <div class="actions">
+          <button class="primary" type="submit">Calculate estimate</button>
+          <button class="secondary" type="reset">Reset</button>
+          <button class="whatsapp" id="whatsapp-button" type="button">Send details on WhatsApp</button>
+          <button class="email" id="email-button" type="button">Send details by email</button>
+          <button class="print" id="print-button" type="button">Print order summary</button>
+        </div>
+
         <p class="success" id="status" role="status" aria-live="polite"></p>
       </form>
-      <aside class="result-panel" aria-live="polite"><div><p class="result-label">Your estimated total</p><p class="total" id="total">$12</p></div><div class="summary"><p><span>Assignment</span><strong id="summary-type">Essay</strong></p><p><span>Pages</span><strong id="summary-pages">1</strong></p><p><span>Rate</span><strong id="summary-rate">$12 / page</strong></p></div></aside>
+
+      <aside class="result-panel" aria-live="polite">
+        <div>
+          <p class="result-label">Your estimated total</p>
+          <p class="total" id="total">$19</p>
+        </div>
+        <div class="summary">
+          <p><span>Assignment</span><strong id="summary-type">Essay</strong></p>
+          <p><span>Pages</span><strong id="summary-pages">1</strong></p>
+          <p><span>Rate</span><strong id="summary-rate">$19 / page</strong></p>
+        </div>
+      </aside>
     </section>
     <footer>Small steps make big assignments easier. Estimates are based on the selected assignment type and page count.</footer>
   </main>
+
   <script>
-    const CUSTOMER_NAME='Sam',WHATSAPP_NUMBER='254797405682',EMAIL_ADDRESS='purzaorg@gmail.com';
-    const form=document.querySelector('#calculator-form'),type=document.querySelector('#assignment-type'),pages=document.querySelector('#pages'),total=document.querySelector('#total'),summaryType=document.querySelector('#summary-type'),summaryPages=document.querySelector('#summary-pages'),summaryRate=document.querySelector('#summary-rate'),status=document.querySelector('#status');
-    function getEstimate(){const selected=type.options[type.selectedIndex],rate=Number(selected.dataset.price),pageCount=Number(pages.value);if(!Number.isInteger(pageCount)||pageCount<1||pageCount>1000)return null;return{assignment:selected.value,pages:pageCount,rate,total:rate*pageCount};}
-    function calculate(){const estimate=getEstimate();if(!estimate)return false;total.textContent=`$${estimate.total.toLocaleString()}`;summaryType.textContent=estimate.assignment;summaryPages.textContent=estimate.pages.toLocaleString();summaryRate.textContent=`$${estimate.rate} / page`;return true;}
-    function messageFor(estimate){return `Hello ${CUSTOMER_NAME}, I would like to place an order.\n\nAssignment: ${estimate.assignment}\nPages: ${estimate.pages}\nRate: $${estimate.rate} per page\nEstimated total: $${estimate.total}`;}
-    form.addEventListener('submit',event=>{event.preventDefault();if(calculate())status.textContent=`Your estimate is ready, ${CUSTOMER_NAME}.`;else{status.textContent='Please enter a valid number of pages.';pages.focus();}});
-    type.addEventListener('change',calculate);pages.addEventListener('input',()=>{if(pages.checkValidity())calculate();status.textContent='';});form.addEventListener('reset',()=>setTimeout(()=>{calculate();status.textContent='';},0));
-    document.querySelector('#whatsapp-button').addEventListener('click',()=>{const estimate=getEstimate();if(!estimate){status.textContent='Please enter a valid number of pages first.';pages.focus();return;}window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(messageFor(estimate))}`,'_blank','noopener,noreferrer');});
-    document.querySelector('#email-button').addEventListener('click',()=>{const estimate=getEstimate();if(!estimate){status.textContent='Please enter a valid number of pages first.';pages.focus();return;}const body=`${messageFor(estimate)}\n\nPlease confirm availability.`;window.location.href=`mailto:${EMAIL_ADDRESS}?subject=${encodeURIComponent(`EssayHelp Estimate - ${estimate.assignment}`)}&body=${encodeURIComponent(body)}`;});
-    document.querySelector('#print-button').addEventListener('click',()=>{const estimate=getEstimate();if(!estimate){status.textContent='Please enter a valid number of pages first.';pages.focus();return;}const printWindow=window.open('','_blank');const today=new Date().toLocaleDateString();printWindow.document.write(`<!DOCTYPE html><html><head><title>EssayHelp Order Summary</title><style>body{font-family:Arial,sans-serif;padding:32px;color:#172033}.container{max-width:600px;margin:auto;border:1px solid #d9deea;border-radius:12px;padding:24px}.header{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.badge{padding:6px 10px;border-radius:999px;background:#ede9fe;color:#4f46e5;font-weight:700}.row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #edf0f7}.total{font-size:24px;font-weight:700;margin-top:18px;text-align:right}.small{color:#667085;font-size:12px}@media print{body{padding:0}.container{border:none}}</style></head><body><div class="container"><div class="header"><div><h2>EssayHelp</h2><div class="small">Prepared for ${CUSTOMER_NAME} · Order summary</div></div><div class="badge">Estimate</div></div><div class="small">Date: ${today}</div><div class="row"><span>Assignment</span><strong>${estimate.assignment}</strong></div><div class="row"><span>Pages</span><strong>${estimate.pages}</strong></div><div class="row"><span>Rate</span><strong>$${estimate.rate} / page</strong></div><div class="row"><span>Estimated total</span><strong>$${estimate.total}</strong></div><div class="total">Total: $${estimate.total}</div></div></body></html>`);printWindow.document.close();printWindow.focus();setTimeout(()=>printWindow.print(),300);});
+    const CUSTOMER_NAME='Sam';
+    const WHATSAPP_NUMBER='254797405682';
+    const EMAIL_ADDRESS='purzaorg@gmail.com';
+
+    const form=document.querySelector('#calculator-form');
+    const type=document.querySelector('#assignment-type');
+    const pages=document.querySelector('#pages');
+    const total=document.querySelector('#total');
+    const summaryType=document.querySelector('#summary-type');
+    const summaryPages=document.querySelector('#summary-pages');
+    const summaryRate=document.querySelector('#summary-rate');
+    const status=document.querySelector('#status');
+    const customField=document.querySelector('#custom-field');
+    const customDetails=document.querySelector('#custom-details');
+
+    function setCustomVisibility() {
+      const customOptionSelected = type.selectedOptions[0].dataset.custom === 'true';
+      customField.hidden = !customOptionSelected;
+      if (!customOptionSelected) {
+        customDetails.value = '';
+      }
+    }
+
+    function getEstimate() {
+      const selected = type.options[type.selectedIndex];
+      const isCustom = selected.dataset.custom === 'true';
+      const pageCount = Number(pages.value);
+
+      if (!Number.isInteger(pageCount) || pageCount < 1 || pageCount > 1000) return null;
+
+      if (isCustom) {
+        return {
+          assignment: selected.value,
+          pages: pageCount,
+          rate: 'Custom quote',
+          total: 'Custom quote',
+          customDetails: customDetails.value.trim()
+        };
+      }
+
+      const rate = Number(selected.dataset.price || 19);
+      return {
+        assignment: selected.value,
+        pages: pageCount,
+        rate,
+        total: rate * pageCount,
+        customDetails: ''
+      };
+    }
+
+    function calculate() {
+      const estimate=getEstimate();
+      if (!estimate) return false;
+
+      if (estimate.total === 'Custom quote') {
+        total.textContent = 'Custom quote';
+        summaryType.textContent = estimate.assignment;
+        summaryPages.textContent = estimate.pages.toLocaleString();
+        summaryRate.textContent = 'Custom quote';
+        return true;
+      }
+
+      total.textContent = `$${estimate.total.toLocaleString()}`;
+      summaryType.textContent = estimate.assignment;
+      summaryPages.textContent = estimate.pages.toLocaleString();
+      summaryRate.textContent = `$${estimate.rate} / page`;
+      return true;
+    }
+
+    function buildMessage(estimate) {
+      const detailBlock = estimate.customDetails ? `\nCustom details: ${estimate.customDetails}` : '';
+      return `Hello ${CUSTOMER_NAME}, I am planning my next assignment and I’d love to get this started soon.\n\nAssignment: ${estimate.assignment}\nPages: ${estimate.pages}\nRate: ${estimate.rate === 'Custom quote' ? 'Custom quote' : '$' + estimate.rate + ' per page'}\nEstimated total: ${estimate.total === 'Custom quote' ? 'Custom quote' : '$' + estimate.total}${detailBlock}\n\nPlease confirm availability and the next steps.`;
+    }
+
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      if (calculate()) {
+        status.textContent = `Your estimate is ready, ${CUSTOMER_NAME}.`;
+      } else {
+        status.textContent = 'Please enter a valid number of pages.';
+        pages.focus();
+      }
+    });
+
+    type.addEventListener('change', () => {
+      setCustomVisibility();
+      calculate();
+      status.textContent = '';
+    });
+
+    pages.addEventListener('input', () => {
+      if (pages.checkValidity()) calculate();
+      status.textContent = '';
+    });
+
+    form.addEventListener('reset', () => {
+      setTimeout(() => {
+        setCustomVisibility();
+        calculate();
+        status.textContent = '';
+      }, 0);
+    });
+
+    document.querySelector('#whatsapp-button').addEventListener('click', () => {
+      const estimate = getEstimate();
+      if (!estimate) {
+        status.textContent = 'Please enter a valid number of pages first.';
+        pages.focus();
+        return;
+      }
+      const text = buildMessage(estimate);
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`,'_blank','noopener,noreferrer');
+    });
+
+    document.querySelector('#email-button').addEventListener('click', () => {
+      const estimate = getEstimate();
+      if (!estimate) {
+        status.textContent = 'Please enter a valid number of pages first.';
+        pages.focus();
+        return;
+      }
+      const subject = `EssayHelp Estimate - ${estimate.assignment}`;
+      const body = buildMessage(estimate);
+      window.location.href = `mailto:${EMAIL_ADDRESS}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    });
+
+    document.querySelector('#print-button').addEventListener('click', () => {
+      const estimate = getEstimate();
+      if (!estimate) {
+        status.textContent = 'Please enter a valid number of pages first.';
+        pages.focus();
+        return;
+      }
+
+      const printWindow = window.open('', '_blank');
+      const today = new Date().toLocaleDateString();
+      const totalValue = estimate.total === 'Custom quote' ? 'Custom quote' : `$${estimate.total}`;
+      const rateValue = estimate.rate === 'Custom quote' ? 'Custom quote' : `$${estimate.rate} / page`;
+      const customText = estimate.customDetails ? `<div class="row"><span>Custom details</span><strong>${estimate.customDetails}</strong></div>` : '';
+
+      printWindow.document.write(`<!DOCTYPE html><html><head><title>EssayHelp Order Summary</title><style>body{font-family:Arial,sans-serif;padding:32px;color:#172033}.container{max-width:600px;margin:auto;border:1px solid #d9deea;border-radius:12px;padding:24px}.header{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.badge{padding:6px 10px;border-radius:999px;background:#ede9fe;color:#4f46e5;font-weight:700}.row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #edf0f7}.total{font-size:24px;font-weight:700;margin-top:18px;text-align:right}.small{color:#667085;font-size:12px}@media print{body{padding:0}.container{border:none}}</style></head><body><div class="container"><div class="header"><div><h2>EssayHelp</h2><div class="small">Prepared for ${CUSTOMER_NAME} · Order summary</div></div><div class="badge">Estimate</div></div><div class="small">Date: ${today}</div><div class="row"><span>Assignment</span><strong>${estimate.assignment}</strong></div><div class="row"><span>Pages</span><strong>${estimate.pages}</strong></div><div class="row"><span>Rate</span><strong>${rateValue}</strong></div><div class="row"><span>Estimated total</span><strong>${totalValue}</strong></div>${customText}<div class="total">Total: ${totalValue}</div></div></body></html>`);
+      printWindow.document.close();
+      printWindow.focus();
+      setTimeout(() => printWindow.print(), 300);
+    });
+
+    setCustomVisibility();
+    calculate();
   </script>
 </body>
 </html>
