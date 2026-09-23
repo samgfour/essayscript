@@ -1,2 +1,2 @@
-# essayscript.py
+# essayscript
 essay writing script
