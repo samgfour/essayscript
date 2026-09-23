@@ -27,14 +27,13 @@
     <footer>Estimates are based on the selected assignment type and page count.</footer>
   </main>
   <script>
-    // Replace this with your WhatsApp number in international format, without +, spaces, or dashes.
-    const WHATSAPP_NUMBER = 'YOUR_WHATSAPP_NUMBER';
+    const WHATSAPP_NUMBER = '254797405682';
     const form=document.querySelector('#calculator-form'),type=document.querySelector('#assignment-type'),pages=document.querySelector('#pages'),total=document.querySelector('#total'),summaryType=document.querySelector('#summary-type'),summaryPages=document.querySelector('#summary-pages'),summaryRate=document.querySelector('#summary-rate'),status=document.querySelector('#status');
     function getEstimate(){const selected=type.options[type.selectedIndex],rate=Number(selected.dataset.price),pageCount=Number(pages.value);if(!Number.isInteger(pageCount)||pageCount<1||pageCount>1000)return null;return{assignment:selected.value,pages:pageCount,rate,total:rate*pageCount};}
     function calculate(){const estimate=getEstimate();if(!estimate)return false;total.textContent=`$${estimate.total.toLocaleString()}`;summaryType.textContent=estimate.assignment;summaryPages.textContent=estimate.pages.toLocaleString();summaryRate.textContent=`$${estimate.rate} / page`;return true;}
     form.addEventListener('submit',event=>{event.preventDefault();if(calculate())status.textContent='Your estimate is ready.';else{status.textContent='Please enter a valid number of pages.';pages.focus();}});
     type.addEventListener('change',calculate);pages.addEventListener('input',()=>{if(pages.checkValidity())calculate();status.textContent='';});form.addEventListener('reset',()=>setTimeout(()=>{calculate();status.textContent='';},0));
-    document.querySelector('#whatsapp-button').addEventListener('click',()=>{const estimate=getEstimate();if(!estimate){status.textContent='Please enter a valid number of pages first.';pages.focus();return;}if(WHATSAPP_NUMBER==='YOUR_WHATSAPP_NUMBER'){status.textContent='Set your WhatsApp number in the script before sending.';return;}const message=`Hello, I would like to place an order.%0A%0AAssignment: ${encodeURIComponent(estimate.assignment)}%0APages: ${estimate.pages}%0ARate: $${estimate.rate} per page%0AEstimated total: $${estimate.total}`;window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`,'_blank','noopener,noreferrer');});
+    document.querySelector('#whatsapp-button').addEventListener('click',()=>{const estimate=getEstimate();if(!estimate){status.textContent='Please enter a valid number of pages first.';pages.focus();return;}const text=`Hello, I would like to place an order.\n\nAssignment: ${estimate.assignment}\nPages: ${estimate.pages}\nRate: $${estimate.rate} per page\nEstimated total: $${estimate.total}`;window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`,'_blank','noopener,noreferrer');});
   </script>
 </body>
 </html>
