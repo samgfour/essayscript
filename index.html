@@ -1,541 +1,561 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Plan your next assignment with a quick estimate from EssayHelp." />
-  <title>EssayHelp | Plan Your Next Assignment</title>
-  <style>
-    :root {
-      --ink: #172033;
-      --muted: #667085;
-      --brand: #6957d9;
-      --brand-dark: #5142b4;
-      --surface: #ffffff;
-      --background: #f4f6fb;
-      --border: #d9deea;
-      --success: #127c57;
-      --warning: #f4b740;
-      --shadow: 0 18px 50px rgba(28, 35, 66, 0.12);
-    }
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Plan your next assignment with a quick estimate from EssayHelp." />
+<title>EssayHelp | Plan Your Next Assignment</title>
+<style>
+:root {
+--ink: #172033;
+--muted: #667085;
+--brand: #6957d9;
+--brand-dark: #5142b4;
+--surface: #ffffff;
+--background: #f4f6fb;
+--border: #d9deea;
+--success: #127c57;
+--warning: #f4b740;
+--shadow: 0 18px 50px rgba(28, 35, 66, 0.12);
+}
 
-    * { box-sizing: border-box; }
+* {
+box-sizing: border-box;
+}
 
-    body {
-      margin: 0;
-      min-height: 100vh;
-      color: var(--ink);
-      background: radial-gradient(circle at top right, #ece7ff 0, rgba(236, 231, 255, 0.1) 38%, transparent 45%), var(--background);
-      font-family: Inter, "Segoe UI", sans-serif;
-      line-height: 1.5;
-    }
+body {
+margin: 0;
+min-height: 100vh;
+color: var(--ink);
+background: radial-gradient(circle at top right, #ece7ff 0, rgba(236, 231, 255, 0.1) 38%, transparent 45%), var(--background);
+font-family: Inter, "Segoe UI", sans-serif;
+line-height: 1.5;
+}
 
-    .shell {
-      width: min(100% - 2rem, 980px);
-      margin: 0 auto;
-      padding: 2rem 0 3rem;
-    }
+.shell {
+width: min(100% - 2rem, 980px);
+margin: 0 auto;
+padding: 2rem 0 3rem;
+}
 
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      margin-bottom: 2.5rem;
-    }
+header {
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 1rem;
+margin-bottom: 2.5rem;
+}
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      font-size: 1.25rem;
-      font-weight: 800;
-      letter-spacing: -0.04em;
-    }
+.logo {
+display: flex;
+align-items: center;
+gap: 0.8rem;
+font-size: 1.25rem;
+font-weight: 800;
+letter-spacing: -0.04em;
+}
 
-    .logo-mark {
-      display: grid;
-      place-items: center;
-      width: 2.4rem;
-      height: 2.4rem;
-      border-radius: 0.8rem;
-      color: #fff;
-      background: var(--brand);
-      box-shadow: 0 8px 18px rgba(105, 87, 217, 0.3);
-      font-size: 1rem;
-      font-weight: 900;
-    }
+.logo-mark {
+display: grid;
+place-items: center;
+width: 2.4rem;
+height: 2.4rem;
+border-radius: 0.8rem;
+color: #fff;
+background: var(--brand);
+box-shadow: 0 8px 18px rgba(105, 87, 217, 0.3);
+font-size: 1rem;
+font-weight: 900;
+}
 
-    .logo-name {
-      display: inline-flex;
-      align-items: baseline;
-      gap: 0.38rem;
-      font-weight: 800;
-      letter-spacing: -0.04em;
-    }
+.logo-name {
+display: inline-flex;
+align-items: baseline;
+gap: 0.38rem;
+font-weight: 800;
+letter-spacing: -0.04em;
+}
 
-    .logo-name small {
-      color: var(--muted);
-      font-size: 0.68rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-weight: 700;
-    }
+.logo-name small {
+color: var(--muted);
+font-size: 0.68rem;
+letter-spacing: 0.08em;
+text-transform: uppercase;
+font-weight: 700;
+}
 
-    .tagline {
-      color: var(--muted);
-      font-size: 0.92rem;
-      font-weight: 600;
-    }
+.tagline {
+color: var(--muted);
+font-size: 0.92rem;
+font-weight: 600;
+}
 
-    .hero {
-      margin-bottom: 1.75rem;
-    }
+.hero {
+margin-bottom: 1.75rem;
+}
 
-    h1 {
-      margin: 0 0 0.7rem;
-      font-size: clamp(2.1rem, 5vw, 3.6rem);
-      line-height: 1.08;
-      letter-spacing: -0.06em;
-    }
+h1 {
+margin: 0 0 0.7rem;
+font-size: clamp(2.1rem, 5vw, 3.6rem);
+line-height: 1.08;
+letter-spacing: -0.06em;
+}
 
-    .hero p {
-      margin: 0;
-      max-width: 720px;
-      color: var(--muted);
-      font-size: 1.08rem;
-    }
+.hero p {
+margin: 0;
+max-width: 720px;
+color: var(--muted);
+font-size: 1.08rem;
+}
 
-    .calculator {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      overflow: hidden;
-      background: var(--surface);
-      border: 1px solid rgba(217, 222, 234, 0.9);
-      border-radius: 1.4rem;
-      box-shadow: var(--shadow);
-    }
+.calculator {
+display: grid;
+grid-template-columns: 1.1fr 0.9fr;
+overflow: hidden;
+background: var(--surface);
+border: 1px solid rgba(217, 222, 234, 0.9);
+border-radius: 1.4rem;
+box-shadow: var(--shadow);
+}
 
-    .form-panel,
-    .result-panel {
-      padding: clamp(1.4rem, 4vw, 2.5rem);
-    }
+.form-panel,
+.result-panel {
+padding: clamp(1.4rem, 4vw, 2.5rem);
+}
 
-    .form-panel {
-      background: rgba(255, 255, 255, 0.96);
-    }
+.form-panel {
+background: rgba(255, 255, 255, 0.96);
+}
 
-    .result-panel {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      color: white;
-      background: linear-gradient(145deg, #6957d9, #40318d);
-    }
+.result-panel {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+color: white;
+background: linear-gradient(145deg, #6957d9, #40318d);
+}
 
-    h2 {
-      margin: 0 0 1.5rem;
-      font-size: 1.28rem;
-      letter-spacing: -0.03em;
-    }
+h2 {
+margin: 0 0 1.5rem;
+font-size: 1.28rem;
+letter-spacing: -0.03em;
+}
 
-    .field {
-      margin-bottom: 1.3rem;
-    }
+.field {
+margin-bottom: 1.3rem;
+}
 
-    label {
-      display: block;
-      margin-bottom: 0.48rem;
-      font-size: 0.94rem;
-      font-weight: 700;
-    }
+label {
+display: block;
+margin-bottom: 0.48rem;
+font-size: 0.94rem;
+font-weight: 700;
+}
 
-    select,
-    input,
-    textarea {
-      width: 100%;
-      padding: 0.88rem 0.95rem;
-      border: 1px solid var(--border);
-      border-radius: 0.7rem;
-      background: white;
-      color: var(--ink);
-      font: inherit;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
-    }
+select,
+input,
+textarea {
+width: 100%;
+padding: 0.88rem 0.95rem;
+border: 1px solid var(--border);
+border-radius: 0.7rem;
+background: white;
+color: var(--ink);
+font: inherit;
+transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
 
-    select:focus,
-    input:focus,
-    textarea:focus {
-      outline: none;
-      border-color: var(--brand);
-      box-shadow: 0 0 0 4px rgba(105, 87, 217, 0.14);
-    }
+select:focus,
+input:focus,
+textarea:focus {
+outline: none;
+border-color: var(--brand);
+box-shadow: 0 0 0 4px rgba(105, 87, 217, 0.14);
+}
 
-    textarea {
-      resize: vertical;
-      min-height: 110px;
-    }
+textarea {
+resize: vertical;
+min-height: 110px;
+}
 
-    .hint {
-      margin: 0.45rem 0 0;
-      color: var(--muted);
-      font-size: 0.82rem;
-    }
+.hint {
+margin: 0.45rem 0 0;
+color: var(--muted);
+font-size: 0.82rem;
+}
 
-    .actions {
-      display: flex;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-      margin-top: 1.75rem;
-    }
+.actions {
+display: flex;
+gap: 0.75rem;
+flex-wrap: wrap;
+margin-top: 1.75rem;
+}
 
-    button {
-      border: none;
-      border-radius: 0.7rem;
-      padding: 0.9rem 1.15rem;
-      font: inherit;
-      font-weight: 750;
-      cursor: pointer;
-      transition: transform 0.15s ease, background 0.15s ease, opacity 0.15s ease;
-    }
+button {
+border: none;
+border-radius: 0.7rem;
+padding: 0.9rem 1.15rem;
+font: inherit;
+font-weight: 750;
+cursor: pointer;
+transition: transform 0.15s ease, background 0.15s ease, opacity 0.15s ease;
+}
 
-    button:hover {
-      transform: translateY(-1px);
-    }
+button:hover {
+transform: translateY(-1px);
+}
 
-    .primary {
-      flex: 1 1 180px;
-      color: white;
-      background: var(--brand);
-    }
+.primary {
+flex: 1 1 180px;
+color: white;
+background: var(--brand);
+}
 
-    .primary:hover {
-      background: var(--brand-dark);
-    }
+.primary:hover {
+background: var(--brand-dark);
+}
 
-    .secondary {
-      color: var(--ink);
-      background: #edf0f7;
-    }
+.secondary {
+color: var(--ink);
+background: #edf0f7;
+}
 
-    .whatsapp {
-      color: white;
-      background: #1fbd63;
-    }
+.whatsapp {
+color: white;
+background: #1fbd63;
+}
 
-    .whatsapp:hover {
-      background: #169b50;
-    }
+.whatsapp:hover {
+background: #169b50;
+}
 
-    .email {
-      color: white;
-      background: #2b6fed;
-    }
+.email {
+color: white;
+background: #2b6fed;
+}
 
-    .email:hover {
-      background: #1d56c8;
-    }
+.email:hover {
+background: #1d56c8;
+}
 
-    .print {
-      color: white;
-      background: #6c5ce7;
-    }
+.print {
+color: white;
+background: #6c5ce7;
+}
 
-    .print:hover {
-      background: #5745d6;
-    }
+.print:hover {
+background: #5745d6;
+}
 
-    .result-label {
-      margin: 0;
-      opacity: 0.82;
-      font-size: 0.92rem;
-    }
+.result-label {
+margin: 0;
+opacity: 0.82;
+font-size: 0.92rem;
+}
 
-    .total {
-      margin: 0.35rem 0 1.4rem;
-      font-size: clamp(2.7rem, 7vw, 4.4rem);
-      line-height: 1;
-      letter-spacing: -0.06em;
-    }
+.total {
+margin: 0.35rem 0 1.4rem;
+font-size: clamp(2.7rem, 7vw, 4.4rem);
+line-height: 1;
+letter-spacing: -0.06em;
+}
 
-    .summary {
-      padding-top: 1.2rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.18);
-    }
+.summary {
+padding-top: 1.2rem;
+border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
 
-    .summary p {
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      margin: 0.6rem 0;
-      opacity: 0.95;
-    }
+.summary p {
+display: flex;
+justify-content: space-between;
+gap: 1rem;
+margin: 0.6rem 0;
+opacity: 0.95;
+}
 
-    .summary strong {
-      color: white;
-    }
+.summary strong {
+color: white;
+}
 
-    .success {
-      min-height: 1.5rem;
-      margin: 1rem 0 0;
-      color: var(--success);
-      font-size: 0.9rem;
-      font-weight: 650;
-    }
+.success {
+min-height: 1.5rem;
+margin: 1rem 0 0;
+color: var(--success);
+font-size: 0.9rem;
+font-weight: 650;
+}
 
-    footer {
-      margin-top: 1.4rem;
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.85rem;
-    }
+footer {
+margin-top: 1.4rem;
+text-align: center;
+color: var(--muted);
+font-size: 0.85rem;
+}
 
-    @media (max-width: 700px) {
-      .shell {
-        padding-top: 1.2rem;
-      }
+@media (max-width: 700px) {
+.shell {
+padding-top: 1.2rem;
+}
 
-      header {
-        margin-bottom: 2rem;
-      }
+header {
+margin-bottom: 2rem;
+}
 
-      .tagline {
-        display: none;
-      }
+.tagline {
+display: none;
+}
 
-      .calculator {
-        grid-template-columns: 1fr;
-      }
+.calculator {
+grid-template-columns: 1fr;
+}
 
-      .result-panel {
-        min-height: 260px;
-      }
-    }
-  </style>
+.result-panel {
+min-height: 260px;
+}
+}
+</style>
 </head>
 <body>
-  <main class="shell">
-    <header>
-      <div class="logo">
-        <span class="logo-mark" aria-hidden="true">S</span>
-        <span class="logo-name">Sam <small>EssayHelp</small></span>
-      </div>
-      <div class="tagline">Friendly estimates, made simple</div>
-    </header>
+<main class="shell">
+<header>
+<div class="logo">
+<span class="logo-mark" aria-hidden="true">S</span>
+<span class="logo-name">Sam <small>EssayHelp</small></span>
+</div>
+<div class="tagline">
+Friendly estimates, made simple
+</div>
+</header>
 
-    <section class="hero" aria-labelledby="page-title">
-      <h1 id="page-title">Let's plan your next assignment.</h1>
-      <p>Hi Sam! Enter your assignment details below and we’ll calculate the estimate for you.</p>
-    </section>
+<section class="hero" aria-labelledby="page-title">
+<h1 id="page-title">Let's plan your next assignment.</h1>
+<p>
+Hi Sam! Enter your assignment details below and we’ll calculate the estimate for you.
+</p>
+</section>
 
-    <section class="calculator" aria-label="Assignment price calculator">
-      <form class="form-panel" id="calculator-form">
-        <h2>Build your estimate</h2>
+<section class="calculator" aria-label="Assignment price calculator">
+<form class="form-panel" id="calculator-form">
+<h2>Build your estimate</h2>
 
-        <div class="field">
-          <label for="assignment-type">Assignment type</label>
-          <select id="assignment-type" name="assignment-type">
-            <option value="Essay" data-price="19">Essay — $19/page</option>
-            <option value="Report" data-price="19">Report — $19/page</option>
-            <option value="Thesis" data-price="19">Thesis — $19/page</option>
-            <option value="Research Paper" data-price="19">Research Paper — $19/page</option>
-            <option value="Dissertation" data-price="19">Dissertation — $19/page</option>
-            <option value="Case Study" data-price="19">Case Study — $19/page</option>
-            <option value="Presentation" data-price="19">Presentation — $19/page</option>
-            <option value="Other / Custom" data-custom="true">Other / Custom — custom quote</option>
-          </select>
-        </div>
+<div class="field">
+<label for="assignment-type">Assignment type</label>
+<select id="assignment-type" name="assignment-type">
+<option value="Essay" data-price="19">Essay — $19/page</option>
+<option value="Report" data-price="19">Report — $19/page</option>
+<option value="Thesis" data-price="19">Thesis — $19/page</option>
+<option value="Research Paper" data-price="19">Research Paper — $19/page</option>
+<option value="Dissertation" data-price="19">Dissertation — $19/page</option>
+<option value="Case Study" data-price="19">Case Study — $19/page</option>
+<option value="Presentation" data-price="19">Presentation — $19/page</option>
+<option value="Other / Custom" data-custom="true">Other / Custom — custom quote</option>
+</select>
+</div>
 
-        <div class="field" id="custom-field" hidden>
-          <label for="custom-details">Describe the custom assignment</label>
-          <textarea id="custom-details" name="custom-details" rows="4" placeholder="Example: 10-page literature review with citations and slides..."></textarea>
-        </div>
+<div class="field" id="custom-field" hidden>
+<label for="custom-details">Describe the custom assignment</label>
+<textarea id="custom-details" name="custom-details" rows="4" placeholder="Example: 10-page literature review with citations and slides..."></textarea>
+</div>
 
-        <div class="field">
-          <label for="pages">Number of pages</label>
-          <input id="pages" name="pages" type="number" min="1" max="1000" step="1" value="1" inputmode="numeric" required aria-describedby="pages-hint" />
-          <p class="hint" id="pages-hint">Enter a whole number from 1 to 1,000.</p>
-        </div>
+<div class="field">
+<label for="pages">Number of pages</label>
+<input id="pages" name="pages" type="number" min="1" max="1000" step="1" value="1" inputmode="numeric" required aria-describedby="pages-hint" />
+<p class="hint" id="pages-hint">
+Enter a whole number from 1 to 1,000.
+</p>
+</div>
 
-        <div class="actions">
-          <button class="primary" type="submit">Calculate estimate</button>
-          <button class="secondary" type="reset">Reset</button>
-          <button class="whatsapp" id="whatsapp-button" type="button">Send details on WhatsApp</button>
-          <button class="email" id="email-button" type="button">Send details by email</button>
-          <button class="print" id="print-button" type="button">Print order summary</button>
-        </div>
+<div class="actions">
+<button class="primary" type="submit">Calculate estimate</button>
+<button class="secondary" type="reset">Reset</button>
+<button class="whatsapp" id="whatsapp-button" type="button">Send details on WhatsApp</button>
+<button class="email" id="email-button" type="button">Send details by email</button>
+<button class="print" id="print-button" type="button">Print order summary</button>
+</div>
 
-        <p class="success" id="status" role="status" aria-live="polite"></p>
-      </form>
+<p class="success" id="status" role="status" aria-live="polite"></p>
+</form>
 
-      <aside class="result-panel" aria-live="polite">
-        <div>
-          <p class="result-label">Your estimated total</p>
-          <p class="total" id="total">$19</p>
-        </div>
-        <div class="summary">
-          <p><span>Assignment</span><strong id="summary-type">Essay</strong></p>
-          <p><span>Pages</span><strong id="summary-pages">1</strong></p>
-          <p><span>Rate</span><strong id="summary-rate">$19 / page</strong></p>
-        </div>
-      </aside>
-    </section>
+<aside class="result-panel" aria-live="polite">
+<div>
+<p class="result-label">
+Your estimated total
+</p>
+<p class="total" id="total">
+$19
+</p>
+</div>
+<div class="summary">
+<p>
+<span>Assignment</span><strong id="summary-type">Essay</strong>
+</p>
+<p>
+<span>Pages</span><strong id="summary-pages">1</strong>
+</p>
+<p>
+<span>Rate</span><strong id="summary-rate">$19 / page</strong>
+</p>
+</div>
+</aside>
+</section>
 
-    <footer>Small steps make big assignments easier. Estimates are based on the selected assignment type and page count.</footer>
-  </main>
+<footer>
+Small steps make big assignments easier. Estimates are based on the selected assignment type and page count.
+</footer>
+</main>
 
-  <script>
-    const CUSTOMER_NAME = 'Sam';
-    const WHATSAPP_NUMBER = '254797405682';
-    const EMAIL_ADDRESS = 'purzaorg@gmail.com';
+<script>
+const CUSTOMER_NAME = 'Sam';
+const WHATSAPP_NUMBER = '254797405682';
+const EMAIL_ADDRESS = 'purzaorg@gmail.com';
 
-    const form = document.querySelector('#calculator-form');
-    const type = document.querySelector('#assignment-type');
-    const pages = document.querySelector('#pages');
-    const total = document.querySelector('#total');
-    const summaryType = document.querySelector('#summary-type');
-    const summaryPages = document.querySelector('#summary-pages');
-    const summaryRate = document.querySelector('#summary-rate');
-    const status = document.querySelector('#status');
-    const customField = document.querySelector('#custom-field');
-    const customDetails = document.querySelector('#custom-details');
+const form = document.querySelector('#calculator-form');
+const type = document.querySelector('#assignment-type');
+const pages = document.querySelector('#pages');
+const total = document.querySelector('#total');
+const summaryType = document.querySelector('#summary-type');
+const summaryPages = document.querySelector('#summary-pages');
+const summaryRate = document.querySelector('#summary-rate');
+const status = document.querySelector('#status');
+const customField = document.querySelector('#custom-field');
+const customDetails = document.querySelector('#custom-details');
 
-    function setCustomVisibility() {
-      const customSelected = type.selectedOptions[0].dataset.custom === 'true';
-      customField.hidden = !customSelected;
-      if (!customSelected) customDetails.value = '';
-    }
+function setCustomVisibility() {
+const customSelected = type.selectedOptions[0].dataset.custom === 'true';
+customField.hidden = !customSelected;
+if (!customSelected) customDetails.value = '';
+}
 
-    function getEstimate() {
-      const selected = type.options[type.selectedIndex];
-      const isCustom = selected.dataset.custom === 'true';
-      const pageCount = Number(pages.value);
+function getEstimate() {
+const selected = type.options[type.selectedIndex];
+const isCustom = selected.dataset.custom === 'true';
+const pageCount = Number(pages.value);
 
-      if (!Number.isInteger(pageCount) || pageCount < 1 || pageCount > 1000) return null;
+if (!Number.isInteger(pageCount) || pageCount < 1 || pageCount > 1000) return null;
 
-      if (isCustom) {
-        return {
-          assignment: selected.value,
-          pages: pageCount,
-          rate: 'Custom quote',
-          total: 'Custom quote',
-          customDetails: customDetails.value.trim()
-        };
-      }
+if (isCustom) {
+return {
+assignment: selected.value,
+pages: pageCount,
+rate: 'Custom quote',
+total: 'Custom quote',
+customDetails: customDetails.value.trim()
+};
+}
 
-      const rate = Number(selected.dataset.price || 19);
-      return {
-        assignment: selected.value,
-        pages: pageCount,
-        rate,
-        total: rate * pageCount,
-        customDetails: ''
-      };
-    }
+const rate = Number(selected.dataset.price || 19);
+return {
+assignment: selected.value,
+pages: pageCount,
+rate,
+total: rate * pageCount,
+customDetails: ''
+};
+}
 
-    function calculate() {
-      const estimate = getEstimate();
-      if (!estimate) return false;
+function calculate() {
+const estimate = getEstimate();
+if (!estimate) return false;
 
-      if (estimate.total === 'Custom quote') {
-        total.textContent = 'Custom quote';
-        summaryType.textContent = estimate.assignment;
-        summaryPages.textContent = estimate.pages.toLocaleString();
-        summaryRate.textContent = 'Custom quote';
-        return true;
-      }
+if (estimate.total === 'Custom quote') {
+total.textContent = 'Custom quote';
+summaryType.textContent = estimate.assignment;
+summaryPages.textContent = estimate.pages.toLocaleString();
+summaryRate.textContent = 'Custom quote';
+return true;
+}
 
-      total.textContent = `$${estimate.total.toLocaleString()}`;
-      summaryType.textContent = estimate.assignment;
-      summaryPages.textContent = estimate.pages.toLocaleString();
-      summaryRate.textContent = `$${estimate.rate} / page`;
-      return true;
-    }
+total.textContent = `$${estimate.total.toLocaleString()}`;
+summaryType.textContent = estimate.assignment;
+summaryPages.textContent = estimate.pages.toLocaleString();
+summaryRate.textContent = `$${estimate.rate} / page`;
+return true;
+}
 
-    function buildMessage(estimate) {
-      const customText = estimate.customDetails ? `\nCustom details: ${estimate.customDetails}` : '';
-      const rateText = estimate.rate === 'Custom quote' ? 'Custom quote' : `$${estimate.rate} per page`;
-      const totalText = estimate.total === 'Custom quote' ? 'Custom quote' : `$${estimate.total}`;
+function buildMessage(estimate) {
+const customText = estimate.customDetails ? `\nCustom details: ${estimate.customDetails}`: '';
+const rateText = estimate.rate === 'Custom quote' ? 'Custom quote': `$${estimate.rate} per page`;
+const totalText = estimate.total === 'Custom quote' ? 'Custom quote': `$${estimate.total}`;
 
-      return `Hello ${CUSTOMER_NAME}, I am planning my next assignment and I’d love to get this started soon.\n\nAssignment: ${estimate.assignment}\nPages: ${estimate.pages}\nRate: ${rateText}\nEstimated total: ${totalText}${customText}\n\nPlease confirm availability and the next steps.`;
-    }
+return `Hello ${CUSTOMER_NAME}, I am planning my next assignment and I’d love to get this started soon.\n\nAssignment: ${estimate.assignment}\nPages: ${estimate.pages}\nRate: ${rateText}\nEstimated total: ${totalText}${customText}\n\nPlease confirm availability and the next steps.`;
+}
 
-    type.addEventListener('change', () => {
-      setCustomVisibility();
-      calculate();
-      status.textContent = '';
-    });
+type.addEventListener('change', () => {
+setCustomVisibility();
+calculate();
+status.textContent = '';
+});
 
-    pages.addEventListener('input', () => {
-      if (pages.checkValidity()) calculate();
-      status.textContent = '';
-    });
+pages.addEventListener('input', () => {
+if (pages.checkValidity()) calculate();
+status.textContent = '';
+});
 
-    form.addEventListener('submit', (event) => {
-      event.preventDefault();
-      if (calculate()) {
-        status.textContent = `Your estimate is ready, ${CUSTOMER_NAME}.`;
-      } else {
-        status.textContent = 'Please enter a valid number of pages.';
-        pages.focus();
-      }
-    });
+form.addEventListener('submit', (event) => {
+event.preventDefault();
+if (calculate()) {
+status.textContent = `Your estimate is ready, ${CUSTOMER_NAME}.`;
+} else {
+status.textContent = 'Please enter a valid number of pages.';
+pages.focus();
+}
+});
 
-    form.addEventListener('reset', () => {
-      setTimeout(() => {
-        setCustomVisibility();
-        calculate();
-        status.textContent = '';
-      }, 0);
-    });
+form.addEventListener('reset', () => {
+setTimeout(() => {
+setCustomVisibility();
+calculate();
+status.textContent = '';
+}, 0);
+});
 
-    document.querySelector('#whatsapp-button').addEventListener('click', () => {
-      const estimate = getEstimate();
-      if (!estimate) {
-        status.textContent = 'Please enter a valid number of pages first.';
-        pages.focus();
-        return;
-      }
+document.querySelector('#whatsapp-button').addEventListener('click', () => {
+const estimate = getEstimate();
+if (!estimate) {
+status.textContent = 'Please enter a valid number of pages first.';
+pages.focus();
+return;
+}
 
-      const text = buildMessage(estimate);
-      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
-    });
+const text = buildMessage(estimate);
+window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
+});
 
-    document.querySelector('#email-button').addEventListener('click', () => {
-      const estimate = getEstimate();
-      if (!estimate) {
-        status.textContent = 'Please enter a valid number of pages first.';
-        pages.focus();
-        return;
-      }
+document.querySelector('#email-button').addEventListener('click', () => {
+const estimate = getEstimate();
+if (!estimate) {
+status.textContent = 'Please enter a valid number of pages first.';
+pages.focus();
+return;
+}
 
-      const body = buildMessage(estimate);
-      const subject = `EssayHelp Estimate - ${estimate.assignment}`;
-      window.location.href = `mailto:${EMAIL_ADDRESS}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    });
+const body = buildMessage(estimate);
+const subject = `EssayHelp Estimate - ${estimate.assignment}`;
+window.location.href = `mailto:${EMAIL_ADDRESS}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+});
 
-    document.querySelector('#print-button').addEventListener('click', () => {
-      const estimate = getEstimate();
-      if (!estimate) {
-        status.textContent = 'Please enter a valid number of pages first.';
-        pages.focus();
-        return;
-      }
+document.querySelector('#print-button').addEventListener('click', () => {
+const estimate = getEstimate();
+if (!estimate) {
+status.textContent = 'Please enter a valid number of pages first.';
+pages.focus();
+return;
+}
 
-      const printWindow = window.open('', '_blank');
-      const today = new Date().toLocaleDateString();
-      const totalValue = estimate.total === 'Custom quote' ? 'Custom quote' : `$${estimate.total}`;
-      const rateValue = estimate.rate === 'Custom quote' ? 'Custom quote' : `$${estimate.rate} / page`;
-      const customText = estimate.customDetails ? `<div class="row"><span>Custom details</span><strong>${estimate.customDetails}</strong></div>` : '';
+const printWindow = window.open('', '_blank');
+const today = new Date().toLocaleDateString();
+const totalValue = estimate.total === 'Custom quote' ? 'Custom quote': `$${estimate.total}`;
+const rateValue = estimate.rate === 'Custom quote' ? 'Custom quote': `$${estimate.rate} / page`;
+const customText = estimate.customDetails ? `<div class="row"><span>Custom details</span><strong>${estimate.customDetails}</strong></div>`: '';
 
-      printWindow.document.write(`<!DOCTYPE html><html><head><title>EssayHelp Order Summary</title><style>body{font-family:Arial,sans-serif;padding:32px;color:#172033}.container{max-width:600px;margin:auto;border:1px solid #d9deea;border-radius:12px;padding:24px}.header{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.badge{padding:6px 10px;border-radius:999px;background:#ede9fe;color:#4f46e5;font-weight:700}.row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #edf0f7}.total{font-size:24px;font-weight:700;margin-top:18px;text-align:right}.small{color:#667085;font-size:12px}@media print{body{padding:0}.container{border:none}}</style></head><body><div class="container"><div class="header"><div><h2>EssayHelp</h2><div class="small">Prepared for ${CUSTOMER_NAME} · Order summary</div></div><div class="badge">Estimate</div></div><div class="small">Date: ${today}</div><div class="row"><span>Assignment</span><strong>${estimate.assignment}</strong></div><div class="row"><span>Pages</span><strong>${estimate.pages}</strong></div><div class="row"><span>Rate</span><strong>${rateValue}</strong></div><div class="row"><span>Estimated total</span><strong>${totalValue}</strong></div>${customText}<div class="total">Total: ${totalValue}</div></div></body></html>`);
-      printWindow.document.close();
-      printWindow.focus();
-      setTimeout(() => printWindow.print(), 300);
-    });
+printWindow.document.write(`<!DOCTYPE html><html><head><title>EssayHelp Order Summary</title><style>body{font-family:Arial,sans-serif;padding:32px;color:#172033}.container{max-width:600px;margin:auto;border:1px solid #d9deea;border-radius:12px;padding:24px}.header{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.badge{padding:6px 10px;border-radius:999px;background:#ede9fe;color:#4f46e5;font-weight:700}.row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #edf0f7}.total{font-size:24px;font-weight:700;margin-top:18px;text-align:right}.small{color:#667085;font-size:12px}@media print{body{padding:0}.container{border:none}}</style></head><body><div class="container"><div class="header"><div><h2>EssayHelp</h2><div class="small">Prepared for ${CUSTOMER_NAME} · Order summary</div></div><div class="badge">Estimate</div></div><div class="small">Date: ${today}</div><div class="row"><span>Assignment</span><strong>${estimate.assignment}</strong></div><div class="row"><span>Pages</span><strong>${estimate.pages}</strong></div><div class="row"><span>Rate</span><strong>${rateValue}</strong></div><div class="row"><span>Estimated total</span><strong>${totalValue}</strong></div>${customText}<div class="total">Total: ${totalValue}</div></div></body></html>`);
+printWindow.document.close();
+printWindow.focus();
+setTimeout(() => printWindow.print(), 300);
+});
 
-    setCustomVisibility();
-    calculate();
-  </script>
+setCustomVisibility();
+calculate();
+</script>
 </body>
 </html>
